@@ -9,3 +9,7 @@
 *.swn
 *.swm
 *.*un~
+
+## Image
+*.png
+*.jpeg

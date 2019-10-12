@@ -1,34 +1,40 @@
 """
+
 Python Sideproject by. 8luebottle
-[Roll-Dice]
-"""
+
+Date : Oct 12, 2019
+Project Name : Roll-Dice
 
 """
-[Pseudo-Code]
-User Input : Would you like to play? 
-
-If Yes :
-    Roll dice for user
-    Roll dice for computer
-
-    If user wins:
-        'You Win!!'
-    elif dealer wins:
-        'You Lose'
-    else 
-        'Hive-five!'
-If No : 
-    'Bye~'
-
-Exception case: 
-    If user inputs other than Yes | No
-"""
-import random
+import random as r
+import pprint
 
 def main():
     min = 1
     max = 6
 
     def roll_dice():
+        choice = input('Would you like to play? y/n\n')
+        
+        if choice.lower() == ('n' or 'no'):
+            print('Bye, human')
+        elif choice.lower() == ('y' or 'yes'):
+            user     = r.randint(min, max)
+            computer = r.randint(min, max)
+
+            print(f"""******* Rolling the dice *******
+                 You rolled a {user}
+            computer rolled a {computer}""")
+
+            if user > computer:
+                print('You Win!')
+            elif user < computer:
+                print('You Lose!')
+            else:
+                print('High Five!')
+        else:
+            print('\nPlease input y or n')
+
+    roll_dice()
 
 main()
